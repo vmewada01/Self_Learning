@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      h1 {
+        color: aqua;
+        font-size: 50px;
+        text-align: center;
+      }
+      #main {
+        height: 550px;
+        width: 500px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        margin: auto;
+        border-radius: 5px;
+        padding-top: 50px;
+      }
+      .child,
+      .child1 {
+        height: 80px;
+        width: 70%;
+
+        margin: auto;
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .child > div {
+        height: 90%;
+        width: 20%;
+        border: 2px solid black;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 50px;
+
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      }
+      .child1 {
+        border: 2px solid black;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      }
+      #main > div :hover {
+        background-color: skyblue;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Vishal Calculator</h1>
+    <div id="main">
+      <div class="child1">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="child">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div style="background-color: black; color: white">+</div>
+      </div>
+      <div class="child">
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div style="background-color: black; color: white">-</div>
+      </div>
+      <div class="child">
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div style="background-color: black; color: white">X</div>
+      </div>
+      <div class="child">
+        <div style="background-color: red; color: white">C</div>
+        <div>0</div>
+        <div style="background-color: black; color: white">=</div>
+        <div style="background-color: black; color: white">/</div>
+      </div>
+    </div>
+  </body>
+</html>
