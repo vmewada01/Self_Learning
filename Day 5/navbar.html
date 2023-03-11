@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+    <style>
+      #parent {
+        height: 100px;
+        width: 80%;
+        background-color: #1c2938;
+        margin: auto;
+        margin-top: 80px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: column;
+      }
+      #parent > div {
+        height: 50%;
+        width: 35%;
+        margin-top: 10px;
+        color: white;
+        padding-top: 5px;
+        padding-left: 5px;
+        font-size: x-large;
+      }
+      .one {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        flex-wrap: column;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="parent">
+      <div>MEGAWIDTH</div>
+      <div class="one">
+        <div>Home</div>
+        <div>About</div>
+        <div>Blog</div>
+        <div>
+          <span>Page</span>
+          <select name="page" id="page">
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
