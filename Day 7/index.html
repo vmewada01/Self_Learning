@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #navbar {
+        height: 60px;
+        width: 100%;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        display: flex;
+        justify-content: space-between;
+      }
+      #navbar > .grand {
+        height: 100%;
+        width: 45%;
+        color: white;
+        font-size: 40px;
+        background-color: blue;
+      }
+      #navbar > .grand1 {
+        height: 100%;
+        width: 45%;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      #navbar > .grand1 > div {
+        height: 90%;
+        width: 15%;
+        margin: auto;
+        text-align: center;
+        font-size: 20px;
+      }
+      .container {
+        height: 700px;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        margin: auto;
+        margin-top: 20px;
+      }
+      .container > div {
+        height: 100%;
+        width: 48%;
+      }
+      .child1 > div {
+        height: 18%;
+        width: 80%;
+
+        margin: auto;
+        padding: 3px;
+      }
+
+      .baby {
+        display: flex;
+      }
+
+      .img > img {
+        height: 130px;
+        width: 150px;
+      }
+      .child2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 300px);
+        gap: 50px;
+      }
+      @media all and (min-width: 500px) and (max-width: 900px) {
+        .child2 {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          grid-template-rows: repeat(3, 300px);
+          gap: 50px;
+        }
+        .container {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      .child2 > div {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      .box1 > div,
+      .box2 > div,
+      .box3 > div,
+      .box4 > div {
+        height: 35%;
+        width: 100%;
+      }
+      img {
+        height: 100px;
+        width: 90px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <div class="grand">StudyLab</div>
+      <div class="grand1">
+        <div style="color: blue">Home</div>
+        <div>About</div>
+        <div>Course</div>
+        <div>Instructor</div>
+        <div>Blog</div>
+        <div>Contact</div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="child1">
+        <div style="color: blue; font-size: 50px; margin-top: 30px">
+          Welcome to Study Lab
+        </div>
+        <div style="color: dark black; font-size: 40px">
+          We Are StudyLab An Online Learing Center
+        </div>
+        <div style="font-size: 20px">
+          A small river named Duden flows by their place and supplies it with
+          the necesssary regelialia. It is a paradismatic country, in which
+          roasted parts of senctences fly into your mouth.
+        </div>
+        <div style="font-size: 20px">
+          Far far away, behind the word mountains , far from the countries
+          Volkania and Conssonantia, there live the bline texts. Separated they
+          live in Bookmarks grove right of the coast fo the Semantics, a large
+          language ocean.
+        </div>
+        <div class="baby">
+          <div class="img">
+            <img
+              src="https://media.istockphoto.com/id/639359406/photo/students-studying-in-college-library.jpg?b=1&s=170667a&w=0&k=20&c=qTUlV89aPSg9vWnQ4iwd-R-MPo-0xn3vmfBhH4Ly1r0="
+              alt=""
+            />
+          </div>
+          <div style="font-size: 20px; color: dark black; margin-top: 20px">
+            Learn any thing from studylab, watch video
+          </div>
+        </div>
+      </div>
+      <div class="child2">
+        <div class="box1">
+          <div>
+            <img
+              src="https://thumbs.dreamstime.com/b/certificate-circle-blue-flat-icon-illustration-119294924.jpg"
+              alt=""
+            />
+          </div>
+          <div style="font-size: 30px">Top Quality Content</div>
+          <div style="font-size: 20px">
+            A small river named Duden flows by their place and supplies
+          </div>
+        </div>
+        <div class="box2">
+          <div>
+            <img
+              src="https://thumbs.dreamstime.com/b/certificate-circle-blue-flat-icon-illustration-119294924.jpg"
+              alt=""
+            />
+          </div>
+          <div style="font-size: 30px">Highly Skilled Instructor</div>
+          <div style="font-size: 20px">
+            A small river named Duden flows by their place and supplies
+          </div>
+        </div>
+        <div class="box3">
+          <div>
+            <img
+              src="https://thumbs.dreamstime.com/b/certificate-circle-blue-flat-icon-illustration-119294924.jpg"
+              alt=""
+            />
+          </div>
+          <div style="font-size: 30px">World Class & Quiz</div>
+          <div style="font-size: 20px">
+            A small river named Duden flows by their place and supplies
+          </div>
+        </div>
+        <div class="box4">
+          <div>
+            <img
+              src="https://thumbs.dreamstime.com/b/certificate-circle-blue-flat-icon-illustration-119294924.jpg"
+              alt=""
+            />
+          </div>
+          <div style="font-size: 30px">Get Certified</div>
+          <div style="font-size: 20px">
+            A small river named Duden flows by their place and supplies
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
