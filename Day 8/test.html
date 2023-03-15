@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selector Tree</title>
+
+    <style>
+  
+      .app>.grandfather{
+        height: 700px;
+        width: 900px;
+        border: dotted black;
+        margin: auto;
+        margin-top: 50px;
+      }
+      .app>.grandfather> .father{
+        height: 600px;
+        width: 850px;
+        border: dotted black;
+        margin: auto;
+        margin-top: 50px;
+        text-align: center;
+      }
+      .person1,.person2 ,.person3, .person4 {
+      height: 120px;
+      width: 90%;
+      border: 3px dotted;
+      margin: 5px;
+      margin: auto;
+      display: flex;
+      margin-bottom: 5px;
+      display: flex;
+      
+      }
+     
+      .person1> div ,.person2>div,.person3>div, .person4>div{
+       height: 80%;
+       width: 10%;
+       border: dotted;
+       margin: auto;
+       
+      }
+      .person1>div:nth-child(4) , .person2>div:nth-child(3) ,.person3>div:nth-child(2), .person4>div:nth-child(1){
+        width: 55%;
+      }
+      .main{
+        display: flex;
+        justify-content: space-evenly;
+        margin: auto;
+      }
+      .main> div{
+        height: 80%;
+        width: 10%;
+        border: dotted;
+        margin-top: 5px;
+        text-align: center;
+        padding-top: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app" style="text-align: center;  ">   
+      Vishal Mewada
+      <div class="grandfather">
+       Grand father
+        <div class="father">
+          Father
+          
+            <div class="person1">
+              person1
+              <div>child-1</div>
+              <div>child-2</div>
+              <div>child-3</div>
+              <div class="main">child-4
+             <div style="font-size: 50px;">1</div>
+             <div>2</div>
+             <div>3</div>
+             <div>4</div>
+
+              </div>
+        
+              </div>
+              <div>
+                <div class="person2">
+                  person2
+                  <div>child-1</div>
+                  <div>child-2 </div>
+                  <div class="main">child-3
+                    <div>1</div>
+                    <div style="font-size: 50px;" >2</div>
+                    <div>3</div>
+                    <div>4</div>
+                  </div>
+                  <div>child-4</div>
+            
+              </div>
+              <div>
+                <div class="person3">
+                  person3
+                  <div>child-1</div>
+                  <div class="main"> child-2
+                    <div>1</div>
+                    <div>2</div>
+                    <div style="font-size: 50px;">3</div>
+                    <div>4</div>
+                  </div>
+                  <div>child-3</div>
+                  <div>child-4</div>
+            
+              </div>
+              <div class="person4">
+                person4
+                <div class="main">child-1
+                  <div>1</div>
+                  <div>2</div>
+                  <div>3</div>
+                  <div style="font-size: 50px;">4</div>
+                </div>
+                <div>child-2</div>
+                <div>child-3</div>
+                <div>child-4</div>
+        </div>
+    
+          <!-- Here you will have to create the Person Elements -->
+  
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
