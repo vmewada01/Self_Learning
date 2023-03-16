@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" placeholder="enter age" value="" id="age" />
+    <button onclick="check_age()">Check Eligibility</button>
+
+    <p id="result">It shows you ,that you are eligible or not ?</p>
+  </body>
+</html>
+
+<script>
+  function check_age() {
+    let print = document.getElementById("age").value;
+    if (print > 18) {
+      // console.log("eligible")
+      document.getElementById("result").innerText = "You can drive in India!";
+      document.getElementById("result").style.fontSize = "30px";
+    } else if (print < 18) {
+      // console.log("not eligible")
+      document.getElementById("result").innerText = "You can't drive in India!";
+      document.getElementById("result").style.fontSize = "30px";
+    } else {
+      // console.log("You are just old enough to drive in India!")
+      document.getElementById("result").innerText =
+        "You are just old enough to drive in India!";
+      document.getElementById("result").style.fontSize = "30px";
+    }
+  }
+</script>
