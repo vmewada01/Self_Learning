@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" placeholder="enter birth year" value="" id="main" />
+    <select name="check" id="check_gender">
+      <option value="">--</option>
+      <option value="male">M</option>
+      <option value="female">F</option>
+    </select>
+    <button onclick="show_alert()">submit</button>
+  </body>
+</html>
+
+<script>
+  function show_alert() {
+    let age = document.getElementById("main").value;
+    if (age >= 2005) {
+      alert("You are UnderAge!");
+    } else if (age < 2005) {
+      alert("You are eligible to get married!");
+    }
+  }
+</script>
