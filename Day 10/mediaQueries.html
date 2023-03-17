@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        height: 400px;
+        margin: auto;
+        margin: 50px;
+        display: grid;
+        grid-template-columns: repeat(3, 300px);
+        grid-template-rows: (0, 700px);
+        gap: 50px;
+        justify-content: center;
+      }
+      .main {
+        height: 85px;
+        width: 28%;
+        margin: auto;
+        color: #19304b;
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .para {
+        height: 40px;
+        width: 40%;
+        font-style: italic;
+        margin: auto;
+        text-align: center;
+      }
+      #container > div {
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        border-radius: 5px;
+      }
+      .box > div {
+        height: 70px;
+        margin: 5px;
+      }
+      .box > div {
+        text-align: center;
+      }
+      .box > div:nth-child(1) {
+        font-size: 30px;
+        margin-bottom: 30px;
+      }
+      .box > div:nth-child(2) {
+        font-size: 70px;
+        color: #09ab78;
+      }
+      .box > div:nth-child(3) {
+        font-size: 20px;
+        font-style: italic;
+      }
+      .box > div:nth-child(4) {
+        font-style: italic;
+      }
+
+      .box > div:nth-child(5) {
+        font-size: 20px;
+        padding-top: 10px;
+        height: 50px;
+        width: 50%;
+        margin: auto;
+        border-radius: 5px;
+        color: blue;
+        border: 3px solid blue;
+      }
+      @media only screen and (min-width: 500px) and (max-width: 900px) {
+        #container {
+          height: 400px;
+          margin: auto;
+          margin: 50px;
+          display: grid;
+          grid-template-columns: repeat(2, 300px);
+          grid-template-rows: (1, 700px);
+          gap: 50px;
+          justify-content: center;
+        }
+      }
+      @media only screen and (min-width: 70px) and (max-width: 285px) {
+        #container {
+          height: 400px;
+          margin: auto;
+          margin: 50px;
+          display: grid;
+          grid-template-columns: repeat(1, 300px);
+          grid-template-rows: (3, 700px);
+          gap: 50px;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">Choose a plan that right for your business</div>
+
+    <div class="para">
+      We collect reviews from our users you can get an honest opinion of what an
+      esperience with our website are really like!
+    </div>
+
+    <div id="container">
+      <div class="box">
+        <div>Starter Plan</div>
+        <div>Free</div>
+        <div>Per Month</div>
+        <div>
+          We collect reviews from our users so you can get an honest opinion of
+          what an experience with our website.
+        </div>
+        <div>Start Now</div>
+      </div>
+      <div class="box">
+        <div>Business Plan</div>
+        <div style="color: orange">$39.00</div>
+        <div>Per Month</div>
+        <div>
+          We collect reviews from our users so you can get an honest opinion of
+          what an experience with our website.
+        </div>
+        <div style="background-color: blue; color: white">Start Now</div>
+      </div>
+      <div class="box">
+        <div>Premium Plan</div>
+        <div style="color: blue">$59.00</div>
+        <div>Per Month</div>
+        <div>
+          We collect reviews from our users so you can get an honest opinion of
+          what an experience with our website.
+        </div>
+        <div>Start Now</div>
+      </div>
+    </div>
+  </body>
+</html>
