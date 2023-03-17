@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        text-align: center;
+        color: #f84364;
+        margin-bottom: 80px;
+      }
+      #container {
+        width: 60%;
+
+        margin: auto;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 150px);
+        gap: 30px;
+      }
+      button {
+        border: 0;
+        padding: 10px 15px;
+        color: white;
+        background-color: #f84265;
+        border-radius: 5px;
+      }
+
+      #container > div {
+        border: 2px solid #f84265;
+        display: flex;
+        border-radius: 5px;
+      }
+      #container > div > div {
+        margin-left: 20px;
+      }
+      img {
+        height: 150px;
+        width: 150px;
+      }
+
+      /* Medium screens */
+      @media only screen and (min-width: 421px) and (max-width: 780px) {
+        img {
+          border-radius: 50%;
+        }
+        #container > div {
+          display: flex;
+          flex-direction: column;
+          padding: 20px;
+        }
+        #container {
+          grid-template-rows: auto;
+        }
+        p {
+          text-align: center;
+        }
+      }
+
+      /* small screens */
+      @media only screen and (min-width: 70px) and (max-width: 420px) {
+        #container {
+          grid-template-columns: repeat(1, 1fr);
+          grid-template-rows: auto;
+        }
+        img {
+          border-radius: 50%;
+        }
+        #container > div {
+          display: flex;
+          flex-direction: column;
+          padding: 20px;
+        }
+        p {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- image link - 
+      https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/radhe-shyam-et00135230-07-03-2022-04-16-56.jpg -->
+    <h1>Just movies</h1>
+    <div id="container">
+      <div>
+        <img
+          src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/radhe-shyam-et00135230-07-03-2022-04-16-56.jpg"
+          alt=""
+        />
+        <div>
+          <h3>Radhe Shyam</h3>
+          <p>Releasing on 11 March, 2022</p>
+          <button>Book Tickets</button>
+        </div>
+      </div>
+      <div>
+        <img
+          src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/radhe-shyam-et00135230-07-03-2022-04-16-56.jpg"
+          alt=""
+        />
+        <div>
+          <h3>Radhe Shyam</h3>
+          <p>Releasing on 11 March, 2022</p>
+          <button>Book Tickets</button>
+        </div>
+      </div>
+      <div>
+        <img
+          src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/radhe-shyam-et00135230-07-03-2022-04-16-56.jpg"
+          alt=""
+        />
+        <div>
+          <h3>Radhe Shyam</h3>
+          <p>Releasing on 11 March, 2022</p>
+          <button>Book Tickets</button>
+        </div>
+      </div>
+      <div>
+        <img
+          src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/radhe-shyam-et00135230-07-03-2022-04-16-56.jpg"
+          alt=""
+        />
+        <div>
+          <h3>Radhe Shyam</h3>
+          <p>Releasing on 11 March, 2022</p>
+          <button>Book Tickets</button>
+        </div>
+      </div>
+      <div>
+        <img
+          src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/radhe-shyam-et00135230-07-03-2022-04-16-56.jpg"
+          alt=""
+        />
+        <div>
+          <h3>Radhe Shyam</h3>
+          <p>Releasing on 11 March, 2022</p>
+          <button>Book Tickets</button>
+        </div>
+      </div>
+      <div>
+        <img
+          src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/radhe-shyam-et00135230-07-03-2022-04-16-56.jpg"
+          alt=""
+        />
+        <div>
+          <h3>Radhe Shyam</h3>
+          <p>Releasing on 11 March, 2022</p>
+          <button>Book Tickets</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
