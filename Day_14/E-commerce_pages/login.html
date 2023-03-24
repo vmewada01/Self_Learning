@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     
+        #navbar{
+            display: flex;
+            justify-content: space-around;
+            background-color: green;
+            padding: 20px;
+      
+        }
+        #navbar div:hover{
+          cursor: pointer;
+        }
+        #navbar a{
+            font-size: 40px;
+          color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id ="navbar">
+   <div><a href="login.html">login</a></div>
+   <div><a href="signup.html">signup</a></div>
+   <div><a href="mens.html">men</a></div>
+   <div><a href="womens.html">women</a></div>
+    </div>
+    <br>
+    <h1>Login Here</h1>
+    <br>
+    <form action="">
+   <input type="text" placeholder="enter_email" id="email">
+   <input type="password" placeholder="enter_password" id="pass">
+   <input type="submit">
+
+
+    </form>
+    
+</body>
+</html>
+
+<script>
+document.querySelector("form").addEventListener("submit",mydata)
+let data= JSON.parse(localStorage.getItem("signup_data"))
+function mydata(){
+    event.preventDefault()
+    let input=document.querySelector("#email").value 
+    let pass= document.querySelector("#pass").value 
+
+    for(let i=0; i<data.length; i++){
+       // console.log(data[i].user_email)
+       // console.log(data[i].user_pass)
+        
+        if(input===data[i].user_email && pass===data[i].user_pass){
+            alert("Login Sucessful");
+            window.location.href ="mens.html"
+            break;
+        }
+        else{
+          console.log("login failed");
+          //alert("you have to sign up")
+        
+        }
+    }
+ //console.log(data)
+   
+
+   //console.log(input,pass);
+}
+
+</script>

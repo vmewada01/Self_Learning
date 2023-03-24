@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <style>
+        #container{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+           width: 25%;
+            color: red;
+            margin: auto;
+            margin-top: 200px;
+            font-size: 30px;
+           
+        }
+        img{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <form action="">
+            <label for="">Card Number :</label>
+            <input type="number" placeholder="enter card no 12345" id="card_no">
+            <br>
+            <br>
+            <label for="">CVV : </label>
+            <input type="number" name="" id="cvv" placeholder="enter cvv no 123">
+            <br>
+            <br>
+            <label for="">Expiry Date :</label>
+            <input type="number" id="expiry" placeholder="enter exp date 2023">
+            <br>
+            <br>
+            <label for="">name :</label>
+            <input type="text" id="name" placeholder="enter name">
+            <br>
+            <br>
+            <input type="submit">
+          <label for=""><i class="fa-brands fa-google-pay"></i></label>
+       
+        
+            </form>
+
+    </div>
+
+    
+</body>
+</html>
+<script>
+    let cardno=document.querySelector("#card_no").value 
+    let cvv=document.querySelector("#cvv").value 
+    let exp= document.querySelector("#expiry").value 
+    let nam=document.querySelector("#name").value 
+   document.querySelector("form").addEventListener("submit",payment)
+     function payment(){
+        event.preventDefault();
+     window.location.href="otp.html"
+        
+       }
+</script>

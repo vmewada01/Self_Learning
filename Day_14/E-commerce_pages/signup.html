@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #navbar{
+            display: flex;
+            justify-content: space-around;
+            background-color: green;
+            padding: 10px;
+      
+        }
+        #navbar div:hover{
+          cursor: pointer;
+        }
+        #navbar div{
+            font-size: 40px;
+          color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div id ="navbar">
+        <div><a href="login.html">login</a></div>
+        <div><a href="signup.html">signup</a></div>
+        <div><a href="mens.html">men</a></div>
+        <div><a href="womens.html">women</a></div>
+         </div>
+         <br>
+         <h1>Signup Here</h1>
+         <br>
+         <form action="">
+        <input type="text" placeholder="enter_name" id="name">
+        <input type="text" placeholder="enter_email" id="email">
+        <input type="number" placeholder="enter_number" id="num">
+        <input type="password" placeholder="enter_password" id="pass">
+        <input type="submit">
+     
+     
+         </form>
+    
+</body>
+</html>
+<script>
+ 
+
+ 
+document.querySelector("form").addEventListener("submit",details)
+
+
+    let storage_data= JSON.parse(localStorage.getItem("signup_data")) ||[]
+    function details(){
+    event.preventDefault()
+
+    let obj={
+        user_name : document.querySelector("#name").value ,
+        user_email : document.querySelector("#email").value ,
+        user_number :document.querySelector("#num").value ,
+        user_pass : document.querySelector("#pass").value 
+    }
+   storage_data.push(obj);
+   localStorage.setItem("signup_data",JSON.stringify(storage_data))
+}
+
+
+
+
+</script>
