@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #winner {
+            width: 200px;
+            height: 200px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            display: flex;
+            justify-content: center;
+            font-size: 50px;
+            margin: auto;
+        }
+
+        #container {
+            display: flex;
+            justify-content: space-evenly;
+            height: 200px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #container>div {
+            width: 20%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            font-size: 100px;
+            text-align: center;
+        }
+
+        #button {
+            background-color: black;
+            color: white;
+
+            font-size: 30px;
+            display: block;
+            margin: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="winner"> </div>
+    <div id="container">
+        <div id="member1"></div>
+        <div id="member2"></div>
+        <div id="member3"></div>
+    </div>
+    <button id="button">ROLL THE DICE</button>
+
+</body>
+
+</html>
+<script>
+    document.querySelector("#button").addEventListener("click", rolldice)
+    let x;
+    let y;
+    let z;
+    let box1 = document.querySelector("#member1")
+    let box2 = document.querySelector("#member2")
+    let box3 = document.querySelector("#member3")
+    function rolldice() {
+        x = Math.floor(Math.random() * 6 + 1)
+        y = Math.floor(Math.random() * 6 + 1)
+        z = Math.floor(Math.random() * 6 + 1)
+
+        box1.innerHTML = x
+        box2.innerHTML = y
+        box3.innerHTML = z
+
+        if (box1.innerHTML > box2.innerHTML && box1.innerHTML > box3.innerHTML) {
+            document.querySelector("#member1").style.backgroundColor = "green"
+            document.querySelector("#winner").innerHTML = "Winner A"
+
+            if (box2.innerHTML > box3.innerHTML) {
+                document.querySelector("#member2").style.backgroundColor = "yellow"
+                document.querySelector("#member3").style.backgroundColor = "red"
+            }
+            if (box3.innerHTML > box2.innerHTML) {
+                document.querySelector("#member3").style.backgroundColor = "yellow"
+                document.querySelector("#member2").style.backgroundColor = "red"
+            }
+        }
+        if (box2.innerHTML > box1.innerHTML && box2.innerHTML > box3.innerHTML) {
+            document.querySelector("#member2").style.backgroundColor = "green"
+            document.querySelector("#winner").innerHTML = "Winner B"
+
+            if (box1.innerHTML > box3.innerHTML) {
+                document.querySelector("#member1").style.backgroundColor = "yellow"
+                document.querySelector("#member3").style.backgroundColor = "red"
+            }
+            if (box3.innerHTML > box1.innerHTML) {
+                document.querySelector("#member3").style.backgroundColor = "yellow"
+                document.querySelector("#member1").style.backgroundColor = "red"
+            }
+
+
+
+        }
+        if (box3.innerHTML > box1.innerHTML && box3.innerHTML > box2.innerHTML) {
+            document.querySelector("#member3").style.backgroundColor = "green"
+            document.querySelector("#winner").innerHTML = "Winner C"
+
+            if (box1.innerHTML > box2.innerHTML) {
+                document.querySelector("#member1").style.backgroundColor = "yellow"
+                document.querySelector("#member2").style.backgroundColor = "red"
+            }
+            if (box2.innerHTML > box1.innerHTML) {
+                document.querySelector("#member2").style.backgroundColor = "yellow"
+                document.querySelector("#member1").style.backgroundColor = "red"
+            }
+
+
+
+        }
+        if (box3.innerHTML == box1.innerHTML && box3.innerHTML == box2.innerHTML && box2.innerHTML == box1.innerHTML) {
+            document.querySelector("#member1").style.backgroundColor = "blue"
+            document.querySelector("#member2").style.backgroundColor = "blue"
+            document.querySelector("#member3").style.backgroundColor = "blue"
+            document.querySelector("#winner").innerHTML = "Tie"
+        }
+
+    }
+
+
+</script>
