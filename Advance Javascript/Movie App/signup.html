@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #navbar{
+            background-color: #d5dbe5;
+            height: 100px;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            font-size: 30px;
+            gap:80px;
+        }
+        #navbar> div{
+            background-color: #9bbfde;
+            border-radius: 5px;
+        }
+        #signupform{
+             margin: auto;
+       
+            height: 500px;
+            width: 30%;
+            margin-top: 50px;
+        }
+        form{
+            border-radius: 5px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            font-size: 20px;
+            gap:30px;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+   #submit{
+    background-color: teal;
+    padding: 10px;
+    border-radius: 5px;
+   }
+     
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <div id="home"><a href="index.html">Home</a></div>
+        <div id="login"><a href="login.html">Login</a></div>
+        <div id="signup"><a href="signup.html">Signup</a> </div>
+    </div>
+    <div id="signupform">
+        <form >
+            <h1>Signup Details</h1>
+            <input type="text" placeholder="Enter Name" id="name">
+            <input type="text" id="email" placeholder="Enter Email">
+            <input type="number" id="contact" placeholder="Contact No">
+            <input type="password" id="password" placeholder="Type Password">
+            <input type="submit" id="submit">
+        
+            </form>
+    </div>
+    
+    
+</body>
+</html>
+<script>
+  document.querySelector(("form")).addEventListener("submit",userdetails)
+   
+  let signup= JSON.parse(localStorage.getItem("signup_details")) || []
+  
+  function user(n,e,c,p){
+   this.name=n 
+   this.email =e 
+   this.contact=c 
+   this.password=p 
+
+   }
+
+
+
+  function userdetails(){
+    event.preventDefault()
+
+      let name= document.querySelector("#name").value 
+      let email =document.querySelector("#email").value 
+      let number = document.querySelector("#contact").value 
+      let password=document.querySelector("#password").value 
+
+      if(name=="" || email=="" || number=="" || password==""){
+        alert("please fill up the details")
+      }
+      else{
+        let details = new user(name,email,number,password)
+      signup.push(details)
+      //console.log(details)
+      localStorage.setItem("signup_details",JSON.stringify(signup));
+
+       window.location.reload();
+ 
+      }
+
+   
+
+  }
+
+</script>
