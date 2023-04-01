@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Details</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div id="navbar">
+       
+        <h1>Hello Friends, Do You Want to Know Your City Weather Details...!!</h1>
+    <input type="text" id="city" placeholder="Type Your City Name Here...">
+    <button onclick="submitCity()"   id="btn">Submit</button>
+    <button onclick="getweather()" id="btn">By Location</button>
+    <!-- <button onclick="day_wise()" id="day_wise">Day_Wise</button> -->
+
+</div>
+
+    <div id="container"></div>
+
+    <div class="mapouter">
+        <div class="gmap_canvas"><iframe width="770" height="510" id="gmap_canvas"
+                frameborder="0"
+                scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <a href="https://embedgooglemap.2yu.co">html embed google map</a>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script src="index.js"></script>

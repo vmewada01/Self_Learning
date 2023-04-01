@@ -1,0 +1,46 @@
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 510px;
+    width: 770px;
+}
+#container {
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    background-color: #05120e;
+    border-radius: 20px;
+    width: 50%;
+    margin: auto;
+    color: yellow;
+}
+#navbar{
+    background-color: cadetblue;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+   text-align: center;
+}
+#city{
+    font-size: 20px;
+    padding: 10px;
+}
+#btn{
+    font-size: 20px;
+    padding: 10px;
+
+}
+#btn:hover{
+    background-color: teal;
+    cursor: pointer;
+}
+
+.mapouter{
+    display: flex;
+    justify-content: center;
+
+}
+body{
+
+    background-image: url("https://images.pexels.com/photos/1292115/pexels-photo-1292115.jpeg?auto=compress&cs=tinysrgb&w=600");
+}
