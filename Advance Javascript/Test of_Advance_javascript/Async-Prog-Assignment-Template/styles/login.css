@@ -1,0 +1,34 @@
+#navbar{
+    background-color: #d5dbe5;
+    height: 100px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-size: 30px;
+    gap:80px;
+}
+#navbar> div{
+    background-color: #9bbfde;
+    border-radius: 5px;
+}
+#login-form-div{
+     margin: auto;
+
+    height: 500px;
+    width: 30%;
+    margin-top: 50px;
+}
+form{
+    border-radius: 5px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    gap:30px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#submit{
+background-color: teal;
+padding: 10px;
+border-radius: 5px;

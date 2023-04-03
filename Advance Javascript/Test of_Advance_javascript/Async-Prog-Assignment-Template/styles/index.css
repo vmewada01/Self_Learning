@@ -1,0 +1,34 @@
+#navbar{
+    background-color: #d5dbe5;
+    height: 100px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-size: 30px;
+    gap:80px;
+}
+#navbar> div{
+    background-color: #9bbfde;
+    border-radius: 5px;
+}
+#slideshow{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+}
+#movies{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: center;
+    text-align: center;
+}
+#sort-buttons{
+   padding: 20px;
+}
+#sorting{
+    background-color: teal;
+    border-radius: 5px;
+    font-size: 20px;
+}
