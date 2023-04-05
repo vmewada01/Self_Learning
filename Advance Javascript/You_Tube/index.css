@@ -1,0 +1,59 @@
+#show_videos{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:30px;
+    height: 600px;
+    overflow: scroll;
+    padding: 20px;
+    height: 100%;
+}
+#navbar{
+    display: flex;
+   justify-content: space-around;
+    gap:90px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin:  auto;
+    padding: 20px;
+}
+#navbar>#logo_left>img{
+  width: 80px;
+  height: 50px;
+}
+
+
+#logo_right{
+    font-size: 30px;
+    display: flex;
+    justify-content: space-between;
+   gap:30px;
+}
+#search > input,#search{
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+#query{
+    border-radius: 5px;
+
+}
+#side_bar{
+  border: 2px solid  black;
+    width: 20%;
+    height: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+  text-align: center;
+  overflow: scroll;
+  
+}
+#side_bar> div{
+display: flex;
+justify-content: space-evenly;
+font-size: 20px;
+}
+#container{
+    display: flex;
+    height: 600px;
+}
