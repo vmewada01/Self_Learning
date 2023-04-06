@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate</title>
+    <link rel="stylesheet" href="index.css">
+   
+</head>
+
+<body>
+<h1>Object Orientation Programming</h1>
+<h2>CLONE of Google Translate</h2>
+
+    <div id="container">
+        <div id="input">
+            <select name="inp_lang"  id="inp_lang">
+         
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+            </select>
+            <button onclick="voice()">Speak</button>
+            <!-- <button onclick="Translate()">Translate</button> -->
+            <textarea name="input-text" id="input_text" oninput="debounce(Translate,1000)"></textarea>
+        </div>
+
+
+
+        <div id="output">
+            <select name="out_lang"  id="out_lang">
+         
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+            </select>
+            <p id="out_data"></p>
+        </div>
+
+    </div>
+    <div id="info">You Can Translate the Words or Sentence either by Voice Recognization or by Typing in the Input Box</div>
+
+</body>
+
+</html>
+<script src="index.js">
+  
+</script>

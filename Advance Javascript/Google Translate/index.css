@@ -1,0 +1,38 @@
+#container {
+    display: flex;
+    border: 1px solid black;
+    background-color: teal;
+}
+
+#input,
+#output {
+    flex: 1;
+    margin: 5%;
+    height: 300px;
+    border: 1px solid black;
+    background-color: aqua;
+}
+
+#input_text {
+    width: 90%;
+    height: 250px;
+    cursor: pointer;
+}
+h1,h2{
+    text-align: center;
+    background-color: aquamarine;
+    border: 2px solid black;
+}
+#info{
+    background-color: yellowgreen;
+    border: 2px solid black;
+    text-align: center;
+    font-style: italic;
+    font-size: 30px;
+    margin-top: 30px;
+ 
+    
+}
+body{
+    background-color: wheat;
+}
