@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Favourites</title>
+    <link rel="stylesheet" href="commonStyles.css" />
+  </head>
+
+  <body>
+    <div id="links">
+      <div><a href="index.html">Home</a></div>
+      <div><a href="contact.html">Contact List</a></div>
+      <div><a href="favourites.html">Favourites</a></div>
+    </div>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Contact Name</th>
+            <th>Mobile Number</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Append your output to tbody -->
+        </tbody>
+      </table>
+    </main>
+  </body>
+  <script>
+    //code your js part here
+    //append your output to tbody
+    let final =JSON.parse(localStorage.getItem("favourites")) || []
+    console.log(final)
+    final.map(function (ele,ind,arr){
+ let tr =document.createElement("tr")
+
+let td1 = document.createElement("td")
+td1.innerText=ele.contact_name
+
+let td2 = document.createElement("td")
+td2.innerText=ele.mobile_no
+
+
+let td3 = document.createElement("td")
+td3.innerText=ele.type
+
+tr.append(td1,td2,td3);
+document.querySelector("tbody").append(tr)
+    })
+
+  </script>
+</html>
