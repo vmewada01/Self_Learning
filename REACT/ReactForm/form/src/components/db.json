@@ -1,0 +1,34 @@
+[
+    {
+        "id":1,
+        "name":"Vishal",
+        "age":20,
+        "address":"bhopal",
+        "department": "software",
+        "salary":50000
+    },
+    {
+        "id":2,
+        "name":"safal",
+        "age":20,
+        "address":"sehore",
+        "department": "hardware",
+        "salary":20000
+    },
+    {
+        "id":3,
+        "name":"jatin",
+        "age":10,
+        "address":"sehore",
+        "department": "software",
+        "salary":10000
+    },
+    {
+        "id":4,
+        "name":"vinod",
+        "age":20,
+        "address":"bhopal",
+        "department": "software",
+        "salary":30000
+    }
+]
