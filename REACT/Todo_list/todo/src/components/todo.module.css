@@ -1,0 +1,38 @@
+.todo{
+    display: flex;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 40%;
+    margin: auto;
+   justify-content: space-between;
+    border-radius: 10px;
+    font-size: 30px;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.todo input{
+width: 40px;
+border-radius: 50px;
+}
+.input{
+    display: flex;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 40%;
+    margin: auto;
+    border-radius: 10px;
+   padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap:10px;
+   
+    justify-content: center;
+
+}
+.input input ,button{
+  
+    border-radius: 20px;
+    font-size: 20px;
+    
+    }
+ 

@@ -1,0 +1,75 @@
+body{
+  background-color: rgb(55,161,189);
+}
+.main{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: white;
+  width: 30%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  margin-top: 50px;
+  border-radius: 10px;
+
+}
+.input{
+  font-size: 15px;
+  height: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bolder;
+}
+.btn{
+  font-size: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgb(55,161,189);
+
+}
+h1{
+  background-color: rgb(55,161,189);
+  border-radius: 5px;
+  text-align: center;
+  color: white;
+}
+.display{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+  color: rgb(55,161,189);
+  font-size: 30px;
+  font-weight: bolder;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: rgb(55,161,189);;
+}
+.btn2{
+  font-size: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: red;
+
+}
+li {
+  list-style: none;
+  font-size: 30px;
+  font-weight: bold;
+  padding-left: 0;
+  text-transform: capitalize;
+  color: white;
+
+}
+.radio{
+  height: 40px;
+  width: 40px;
+ background-color: rgb(55,161,189);
+}
+.radio:checked {
+  background-color: yellow;
+}
+button:hover {
+  background-color: yellow;
+}
