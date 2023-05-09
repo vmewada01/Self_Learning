@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    .calculator {
+      width: 500px;
+      height: 550px;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      padding: 20px 20px;
+
+      margin: auto;
+    }
+
+    .input {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      border-radius: 5px;
+      height: 18%;
+      margin: auto;
+      margin-bottom: 20px;
+
+    }
+
+    .keyboard {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 90px);
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .keyboard>div {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      border-radius: 14px;
+      font-size: 50px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+
+    }
+
+    .keyboard>.black {
+      background-color: black;
+      color: white;
+
+    }
+
+    .keyboard>.red {
+      background-color: red;
+      color: white;
+    }
+
+    .input {
+      font-size: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .keyboard>div:hover {
+      background-color: aqua;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Vishal calculator</h1>
+  <div class="calculator">
+    <div class="input"></div>
+    <div class="keyboard">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div class="black">+</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div class="black">-</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+      <div class="black">*</div>
+      <div class="red">C</div>
+      <div>0</div>
+      <div class="black">=</div>
+      <div class="black">/</div>
+    </div>
+
+  </div>
+</body>
+
+</html>
+<script>
+  let num = document.querySelectorAll(".keyboard > div");
+
+  let bag = document.querySelector(".input");
+  //console.log(num);
+  for (let i = 0; i < num.length; i++) {
+    num[i].addEventListener("click", myCalculator);
+  }
+
+
+  function myCalculator() {
+    // console.log("clicked on any button");
+    let output = event.target.innerText
+    switch (output) {
+      case "C": bag.innerText = "";
+        break;
+      case "=":
+        bag.innerText = eval(bag.innerText);
+        break;
+
+      default:
+        bag.innerText += output;
+
+    }
+  }
+
+
+</script>

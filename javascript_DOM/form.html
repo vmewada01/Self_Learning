@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+
+</head>
+
+<body>
+    <h1>form</h1>
+    name : <input type="text" placeholder="enter name" value="" id="data">
+
+    <br>
+    age : <input type="number" placeholder=" enter age" value="" id="data">
+
+    <br>
+    gender :
+    <select id="data">
+        <option value="--">--</option>
+        <option value="male">M</option>
+        <option value="female">F</option>
+    </select>
+
+    <br>
+    email : <input type="text" placeholder="enter email" value="" id="data">
+
+    <br>
+    mobile no. : <input type="number" placeholder="enter mobile no." value="" id="data">
+
+
+    <br>
+    <br>
+    <button id="main">submit</button>
+
+
+</body>
+
+</html>
+
+<script>
+    let bag = document.querySelectorAll("#data")
+    // console.log(bag);
+    let abc = document.querySelector("#main").addEventListener("click", checking);
+
+
+
+
+    function checking() {
+        // console.log("button is clicked")
+        for (let i = 0; i < bag.length; i++) {
+            console.log(bag[i].value);
+        }
+    }
+</script>

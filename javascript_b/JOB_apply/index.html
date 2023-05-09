@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+
+  <body>
+    <div id="links">
+      <div><a href="index.html">Home</a></div>
+      <div><a href="applied.html">Applied Jobs</a></div>
+      <div><a href="bookmarks.html">Bookmarks</a></div>
+    </div>
+
+    <main>
+      <form action="" id="form">
+        <h2>Enter Your Application Details</h2>
+        <input placeholder="Enter Name" id="name" name="name" type="text" />
+        <input placeholder="Enter Email" id="email" name="email" type="text" />
+        <select name="course" id="course">
+          <option value="fsd">FSD</option>
+          <option value="frontend">FRONTEND</option>
+          <option value="backend">BACKEND</option>
+        </select>
+        <input type="number" placeholder="exp salary per/annum" id="salary">
+        <input id="submit" type="submit" name="submit" value="Submit" />
+      </form>
+    </main>
+  </body>
+
+</html>
+<script >
+document.querySelector("#form").addEventListener("submit",userdetails)
+let user_data=JSON.parse(localStorage.getItem("detail")) || []
+function userdetails(){
+    event.preventDefault();
+   let obj={
+    name : document.querySelector("#name").value,
+    email : document.querySelector("#email").value,
+    course: document.querySelector("#course").value,
+    salary: document.querySelector("#salary").value,
+   }
+  user_data.push(obj);
+  localStorage.setItem("detail",JSON.stringify(user_data));
+  window.location.href="applied.html";
+  //console.log(user_data)
+}
+</script>

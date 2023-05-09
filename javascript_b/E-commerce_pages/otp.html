@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Enter OTP</h1>
+    <input type="number" name="" id="otp">
+    <button id="submit">enter otp</button>
+    
+</body>
+</html>
+<script>
+   document.querySelector("#submit").addEventListener("click",checkotp)
+   function checkotp(){
+    event.preventDefault();
+  let abc=  document.querySelector("#otp").value
+  if(abc==1234){
+    alert("Payment Successfull");
+  }
+  else{
+    alert("enter correct otp")
+  }
+   
+   }
+</script>
