@@ -5,6 +5,7 @@ import Mens from "../Pages/Mens"
 import Womens from "../Pages/Womens"
 import React from "react"
 import LoginPage from "../Pages/LoginPage"
+import PrivateRoute from "../Pages/PrivateRoute"
 
 
 function AllRoutes(){
@@ -12,9 +13,22 @@ function AllRoutes(){
         <>
    <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Products" element={<Products />} />
-        <Route path="/Mens" element={<Mens />} />
-        <Route path="/Womens" element={<Womens />} />
+        <Route path="/Products" element={
+        // <PrivateRoute>
+        
+        <Products />
+        // </PrivateRoute>
+        } />
+        <Route path="/Mens" element={
+        // <PrivateRoute>
+        <Mens />
+        // </PrivateRoute>
+        } />
+        <Route path="/Womens" element={
+        // <PrivateRoute>
+        <Womens />
+        // </PrivateRoute>
+        } />
         <Route path="/LoginPage" element={<LoginPage />}/>
    </Routes>
 

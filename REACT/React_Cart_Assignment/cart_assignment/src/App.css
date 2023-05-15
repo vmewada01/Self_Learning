@@ -83,3 +83,12 @@ button[type='submit'] {
 button[type='submit']:hover {
   background-color: #e6004c;
 }
+.light{
+  background-color: white;
+  color: black;
+}
+.dark{
+  background-color: black;
+  color: white;
+}
+

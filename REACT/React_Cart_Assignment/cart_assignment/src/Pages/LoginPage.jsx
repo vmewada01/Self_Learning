@@ -1,13 +1,27 @@
 // LoginPage.js
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import "../App.css"
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthContext';
+import axios from 'axios';
+
+const userLogin=({username,password})=>{
+  return   axios({
+       url: "https://reqres.in/api/login",
+       method: "POST",
+       data:{
+        username,
+        password
+       }
+     })
+}
+
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
+   const [state,dispatch] = useContext(AuthContext)
   const navigate= useNavigate()
 
   const handleUsernameChange = (event) => {
@@ -21,19 +35,23 @@ const LoginPage = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Perform login logic here
-    if(username==="vishalmewada123@gmail.com" && password==12345){
-      navigate("/Home")
-    }
-    else{
-    navigate("/Login")
-    alert("Please Enter Correct username and password , Hindt:vishalmewada123@gmail.com, 12345 ")
-    }
-    console.log('Username:', username);
-    console.log('Password:', password);
-    // Reset the form
-    setUsername('');
-    setPassword('');
-  };
+ 
+    userLogin({username,password}).then((res)=>{
+      dispatch({
+        type: "LOGIN_SUCCESS",
+        payload:{
+          token : res.data.token 
+        }
+      })
+    
+      alert("login Successfull")
+      navigate("/");
+    })
+  
+  }
+  if(state.isAuth){
+    return <Navigate to="/Login" />
+  }
 
   return (
     <div className="login-page">
@@ -42,7 +60,7 @@ const LoginPage = () => {
         <div className="form-group">
           <label htmlFor="username">Username:</label>
           <input
-            type="text"
+            type="username"
             id="username"
             value={username}
             onChange={handleUsernameChange}

@@ -12,26 +12,39 @@ const Footer = () => {
       <div>
         <ul>
           <li>
-            <a href="https://facebook.com">Facebook</a>
+            <h3 > <a style={{color:"#e6004c"}} href="https://facebook.com">Facebook</a></h3>
+           
           </li>
           <li>
-            <a href="https://twitter.com">Twitter</a>
+            <h3 >
+            <a style={{color:"#e6004c"}} href="https://twitter.com">Twitter</a>
+            </h3>
+            
           </li>
           <li>
-            <a href="https://instagram.com">Instagram</a>
+            <h3>
+            <a style={{color:"#e6004c"}} href="https://instagram.com">Instagram</a>
+            </h3>
+           
           </li>
           <li>
-            <a href="/about">About</a>
+            <h3>
+            <a style={{color:"#e6004c"}} href="/about">About</a>
+            </h3>
+         
           </li>
           <li>
-            <a href="/contact">Contact</a>
+            <h3>
+            <a style={{color:"#e6004c"}} href="/contact">Contact</a>
+            </h3>
+            
           </li>
         </ul>
       </div>
       <div>
-        <p>
+        <h4 style={{textAlign: "center"}}>
           This ecommerce app is dedicated to providing the best online shopping experience. Browse our wide range of products, including electronics, fashion, home goods, and more. Shop with confidence and enjoy fast shipping and excellent customer service.
-        </p>
+        </h4>
       </div>
     </footer>
   );
