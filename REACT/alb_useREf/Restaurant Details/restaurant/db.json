@@ -1,0 +1,243 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "url":"https://media.istockphoto.com/id/1443470855/photo/mediterranean-seafood-soup-stew-with-garlic-bread-squid-mussels-and-octopus.jpg?s=612x612&w=0&k=20&c=CQV0eu0_-ivX5e2X1K8Psp1g2S_Xr0TPljw7cbc04hc=",
+      "name": "Raj Hans",
+      "dishes": "Pizza,Burger,Noodles",
+      "price": 600,
+      "min_price": 50,
+      "payments": "online",
+      "rating": 4,
+      "votes": 400,
+      "reviews": 300
+    },
+    {
+      "id":2,
+      "url":"https://media.istockphoto.com/id/498378712/photo/lunch-in-restaurant-in-sri-lanka.jpg?s=612x612&w=0&k=20&c=sXdK5Uz44C4j7UC7c0pMmpa3dUEu3Bbd_A0JQj2oJ0c=",
+      "name": "Raj",
+      "dishes": "Maggie,hotDog,non-veg",
+      "price": 800,
+      "min_price": 80,
+      "payments": "cash , online",
+      "rating": 4,
+      "votes": 400,
+      "reviews": 300
+    },
+    {
+      "id":3,
+      "url":"https://media.istockphoto.com/id/1309104980/photo/gujiya-an-indian-holi-special-snacks.jpg?s=612x612&w=0&k=20&c=-MWXHqJSeSq1U_lEHaVZI436dz02IzG58uYT7BCHOgg=",
+      "name": "King Hotel",
+      "dishes": "pure-veg,Baafle,special gheer",
+      "price": 500,
+      "min_price": 100,
+      "payments": "cash",
+      "rating": 4,
+      "votes": 400,
+      "reviews": 300
+    },
+    {
+      "id":4,
+      "url":"https://media.istockphoto.com/id/1309104980/photo/gujiya-an-indian-holi-special-snacks.jpg?s=612x612&w=0&k=20&c=-MWXHqJSeSq1U_lEHaVZI436dz02IzG58uYT7BCHOgg=",
+      "name": "Cresent hotel",
+      "dishes": "Dal Bati,Makke ki roti,shahi panner",
+      "price": 900,
+      "min_price": 90,
+      "payments": "online ,cash",
+      "rating": 4,
+      "votes": 400,
+      "reviews": 300
+    },
+    {
+      "id":5,
+      "url":"https://media.istockphoto.com/id/1205482399/photo/traditional-south-indian-snacks-dosa-idli-medu-wada-on-banana-leaf.jpg?s=612x612&w=0&k=20&c=2SvIL78Y6YMO0AJeNTwQNgoqb6tDXMpmfSQcawrYf6c=",
+      "name": "south Indian Food hotel ",
+      "dishes": "Idli ,Sambhar,Rice",
+      "price": 600,
+      "min_price": 50,
+      "payments": "online",
+      "rating": 4,
+      "votes": 400,
+      "reviews": 300
+    },    {
+      "id":6,
+      "url":"https://media.istockphoto.com/id/667802354/photo/shrimp-sandwiches-with-avocado.jpg?s=612x612&w=0&k=20&c=rYKoRXIDEx1sr0FlbVbH1CeeaSW33F3qrOSe-ZKSvB0=",
+      "name": "Raj Hans",
+      "dishes": "Pizza,Burger,Noodles",
+      "price": 600,
+      "min_price": 50,
+      "payments": "online",
+      "rating": 4,
+      "votes": 400,
+      "reviews": 300
+    },    {
+      "id":7,
+      "url":"https://media.istockphoto.com/id/1309104980/photo/gujiya-an-indian-holi-special-snacks.jpg?s=612x612&w=0&k=20&c=-MWXHqJSeSq1U_lEHaVZI436dz02IzG58uYT7BCHOgg=",
+      "name": "Raj Hans",
+      "dishes": "Pizza,Burger,Noodles",
+      "price": 600,
+      "min_price": 50,
+      "payments": "online",
+      "rating": 4,
+      "votes": 400,
+      "reviews": 300
+    },    {
+      "id":8,
+      "url":"https://media.istockphoto.com/id/1309104980/photo/gujiya-an-indian-holi-special-snacks.jpg?s=612x612&w=0&k=20&c=-MWXHqJSeSq1U_lEHaVZI436dz02IzG58uYT7BCHOgg=",
+      "name": "Raj Hans",
+      "dishes": "Pizza,Burger,Noodles",
+      "price": 600,
+      "min_price": 50,
+      "payments": "online",
+      "rating": 4,
+      "votes": 400,
+      "reviews": 300
+    },
+    {
+      "id":9,
+      "url":"https://media.istockphoto.com/id/1309104980/photo/gujiya-an-indian-holi-special-snacks.jpg?s=612x612&w=0&k=20&c=-MWXHqJSeSq1U_lEHaVZI436dz02IzG58uYT7BCHOgg=",
+      "name": "Raj Hans",
+      "dishes": "Pizza,Burger,Noodles",
+      "price": 600,
+      "min_price": 50,
+      "payments": "online",
+      "rating": 4,
+      "votes": 400,
+      "reviews": 300
+    },
+    {
+      "id":10,
+      "url":"https://media.istockphoto.com/id/1309104980/photo/gujiya-an-indian-holi-special-snacks.jpg?s=612x612&w=0&k=20&c=-MWXHqJSeSq1U_lEHaVZI436dz02IzG58uYT7BCHOgg=",
+      "name": "Raj Hans",
+      "dishes": "Pizza,Burger,Noodles",
+      "price": 600,
+      "min_price": 50,
+      "payments": "online",
+      "rating": 4,
+      "votes": 400,
+      "reviews": 300
+    },
+    {
+      "id":11,
+      "url":"https://media.istockphoto.com/id/1436294330/photo/white-bowl-chocolate-cake-on-a-grey-background-bowl-of-melted-white-chocolate-and-broken.jpg?s=612x612&w=0&k=20&c=0prOJrXnPf1Pg_QIHiM-wdHx-K1i7uDlY_Wj8T0JOfo=",
+      "name": "Raj Hans",
+      "dishes": "Pizza,Burger,Noodles",
+      "price": 600,
+      "min_price": 50,
+      "payments": "online",
+      "rating": 4,
+      "votes": 400,
+      "reviews": 300
+    },
+    {
+      "id":12,
+      "url":"https://media.istockphoto.com/id/1413845315/photo/kurkure-paneer-pakora.jpg?s=612x612&w=0&k=20&c=gCa0mvWaFLFgz4eC1NwyrVpI4Sndiob41nYna1VJgMc=",
+      "name": "Raj Hans",
+      "dishes": "Pizza,Burger,Noodles",
+      "price": 600,
+      "min_price": 50,
+      "payments": "online",
+      "rating": 4,
+      "votes": 400,
+      "reviews": 300
+    },
+    {
+      "id":13,
+      "url":"https://media.istockphoto.com/id/1309104980/photo/gujiya-an-indian-holi-special-snacks.jpg?s=612x612&w=0&k=20&c=-MWXHqJSeSq1U_lEHaVZI436dz02IzG58uYT7BCHOgg=",
+      "name": "Raj Hans",
+      "dishes": "Pizza,Burger,Noodles",
+      "price": 600,
+      "min_price": 50,
+      "payments": "online",
+      "rating": 4,
+      "votes": 400,
+      "reviews": 300
+    },
+    {
+      "id":14,
+      "url":"https://media.istockphoto.com/id/1309104980/photo/gujiya-an-indian-holi-special-snacks.jpg?s=612x612&w=0&k=20&c=-MWXHqJSeSq1U_lEHaVZI436dz02IzG58uYT7BCHOgg=",
+      "name": "Raj Hans",
+      "dishes": "Pizza,Burger,Noodles",
+      "price": 600,
+      "min_price": 50,
+      "payments": "online",
+      "rating": 4,
+      "votes": 400,
+      "reviews": 300
+    },
+    {
+      "id":15,
+      "url":"https://media.istockphoto.com/id/1309104980/photo/gujiya-an-indian-holi-special-snacks.jpg?s=612x612&w=0&k=20&c=-MWXHqJSeSq1U_lEHaVZI436dz02IzG58uYT7BCHOgg=",
+      "name": "Raj Hans",
+      "dishes": "Pizza,Burger,Noodles",
+      "price": 600,
+      "min_price": 50,
+      "payments": "online",
+      "rating": 4,
+      "votes": 400,
+      "reviews": 300
+    },
+    {
+      "id":16,
+      "url":"https://media.istockphoto.com/id/1309104980/photo/gujiya-an-indian-holi-special-snacks.jpg?s=612x612&w=0&k=20&c=-MWXHqJSeSq1U_lEHaVZI436dz02IzG58uYT7BCHOgg=",
+      "name": "Raj Hans",
+      "dishes": "Pizza,Burger,Noodles",
+      "price": 600,
+      "min_price": 50,
+      "payments": "online",
+      "rating": 4,
+      "votes": 400,
+      "reviews": 300
+    },
+    {
+      "id":17,
+      "url":"https://media.istockphoto.com/id/1309104980/photo/gujiya-an-indian-holi-special-snacks.jpg?s=612x612&w=0&k=20&c=-MWXHqJSeSq1U_lEHaVZI436dz02IzG58uYT7BCHOgg=",
+      "name": "Raj Hans",
+      "dishes": "Pizza,Burger,Noodles",
+      "price": 600,
+      "min_price": 50,
+      "payments": "online",
+      "rating": 4,
+      "votes": 400,
+      "reviews": 300
+    },
+    {
+      "id":18,
+      "url":"https://media.istockphoto.com/id/1358896322/photo/chilly-paneer.jpg?s=612x612&w=0&k=20&c=wK2FC4PYsykexWTjUcoO8946T4IduN3JG-scoEnhCcU=",
+      "name": "Raj Hans",
+      "dishes": "Pizza,Burger,Noodles",
+      "price": 600,
+      "min_price": 50,
+      "payments": "online cash card",
+      "rating": 4,
+      "votes": 400,
+      "reviews": 300
+    },
+    {
+      "id":19,
+      "url":"https://media.istockphoto.com/id/639389404/photo/authentic-indian-food.jpg?s=612x612&w=0&k=20&c=gbfAu17L1gtHmuo5biByhfCefAtYUtGQpyxMmi9_Mus=",
+      "name": "Raj Hans",
+      "dishes": "Pizza,Burger,Noodles",
+      "price": 499,
+      "min_price": 354,
+      "payments": "online cash",
+      "rating": 4,
+      "votes": 400,
+      "reviews": 300
+    },
+    {
+      "id":20,
+      "url":"https://media.istockphoto.com/id/1024585168/photo/paneer-butter-masala-also-known-as-panir-makhani-or-makhanwala-served-in-a-ceramic-or-wooden.jpg?s=612x612&w=0&k=20&c=DbA7ucx0xpS18zO1sFIaAmm41xKF-iIlKxOjbgFZJ1o=",
+      "name": "Raj Hans",
+      "dishes": "Pizza,Burger,Noodles",
+      "price": 700,
+      "min_price": 70,
+      "payments": "online",
+      "rating": 4,
+      "votes": 400,
+      "reviews": 300
+    }
+    
+  ]
+ 
+}
