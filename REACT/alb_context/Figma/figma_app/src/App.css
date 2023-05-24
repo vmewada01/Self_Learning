@@ -1,0 +1,77 @@
+.parent {
+  display: flex;
+}
+.one {
+  height: 100%;
+  position: fixed;
+
+  width: 70px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.two {
+  width: 300px;
+  height: 500px;
+  margin-left: 180px;
+  display: flex;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.one {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  align-items: center;
+}
+.btn {
+  border-radius: 50%;
+  background-color: lightseagreen;
+  color: white;
+  width: 60px;
+  height: 40px;
+  font-size: 30px;
+}
+.middle{
+ display: flex;
+ flex-direction: column;
+ gap:30px;
+ 
+}
+.middle div:hover{
+  background-color: blue;
+  color: white;
+ 
+}
+.middle div{
+  width:60px ;
+  height: 40px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.two{
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-evenly;
+}
+
+.a{
+  display: flex;
+  justify-content: space-between;
+}
+.b{
+  display: flex;
+ 
+}
+
+
+.dark{
+  background-color: black;
+  color: white;
+}
+
+.light{
+  background-color: white;
+  color: black;
+}
