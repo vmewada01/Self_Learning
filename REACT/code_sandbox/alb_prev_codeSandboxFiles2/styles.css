@@ -1,0 +1,27 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.box {
+  display: flex;
+  background-color: blue;
+  border-radius: 20px;
+  justify-content: center;
+  color: white;
+}
+.box .head {
+  border-radius: 5px;
+}
+
+button {
+  background-color: blue;
+  padding: 2px;
+  border-radius: 5px;
+  color: yellow;
+}
+.head1 {
+  display: inline;
+  border-radius: 5px;
+  color: aqua;
+  background-color: blue;
+}
