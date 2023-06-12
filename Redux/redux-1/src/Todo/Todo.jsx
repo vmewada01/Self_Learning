@@ -87,7 +87,10 @@ const Todo = () => {
    console.log(err)
   })
  }
- 
+ const handleEdit =(abc)=>{
+        const {title} = payload 
+
+ }
 
   return (
     <div>
@@ -98,6 +101,7 @@ const Todo = () => {
                <div>{abc.title}</div>
                <div> <button onClick={()=>toggleFunction(abc.id, abc.title,abc.status)}>{abc.status ? "true": "false"}</button></div>
                <div><button onClick={()=> handleDeletfunc(abc.id)}>delete</button></div>
+               <div><button onClick={()=> handleEdit(abc.title)}>edit</button></div>
                <div><Link to={`/Todo/${abc.id}`}>Get More Details</Link></div>
              
              </div>;

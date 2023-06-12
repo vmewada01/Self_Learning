@@ -4,9 +4,9 @@ const loginRequest = () => {
     return { type: types.ADD_LOGIN_REQUEST };
   };
   
-  const loginSccess = (payload) => {
+  const loginSccess = (token) => {
     return { type: types.ADD_LOGIN_SUCCESS,
-        payload
+        token 
      };
   };
   
