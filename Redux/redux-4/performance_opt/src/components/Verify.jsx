@@ -1,26 +1,24 @@
-import React, { useMemo, useState } from 'react'
-
+import React, { useEffect, useMemo, useState } from "react";
 
 const Verify = () => {
-const [change, setChange] = useState(false)
-    
-const ChangeColor = (delay)=> {
-  const id=  setTimeout(()=> {
-      setChange(true)
-    },delay)
-    return ()=> {
-        clearTimeout(id)
-    }
-}
+  const [count, setCount] = useState(0);
 
-  const isDone = useMemo(()=> ChangeColor(5000))
+  const ChangeColor = (delay) => {
+    const id = setInterval(() => {
+      setCount((prev) => prev + 1);
+    }, delay);
+  };
+
+  const isDone = useMemo(() => ChangeColor(4000));
 
   return (
-    <div style={{border:"1px solid black"}}>
-        <div style={{backgroundColor: change? "Yellow" : "green"}} >Content</div>
-
+    <div style={{ border: "1px solid black" }}>
+      <div>Count :{count}</div>
+      <div style={{ backgroundColor: count % 2 === 0 ? "Yellow" : "green" }}>
+        Content
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default React.memo(Verify)
+export default React.memo(Verify);

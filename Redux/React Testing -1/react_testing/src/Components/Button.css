@@ -1,0 +1,31 @@
+.button {
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    
+}
+.red{
+    background-color: red;
+    color: black;
+}
+
+.blue{
+    background-color: blue;
+    color: black;
+}
+.orange{
+    background-color: orange;
+    color: black;
+}
+.ghost{
+  border: none;
+}
+.outline{
+ border: 1px solid green;
+ color: black;
+}
+.green{
+    background-color: green;
+}
