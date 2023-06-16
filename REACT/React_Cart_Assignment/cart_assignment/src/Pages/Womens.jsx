@@ -4,10 +4,16 @@ import React, { useEffect, useState } from 'react'
 const Womens = () => {
   const [data, setData] = useState([]);
   const [count, setCount]= useState(0)
+  const [sortvalue, SetSortValue] = useState("asc");
+  const sortingFunc = (e) => {
+    const ans = e.target.value;
+    SetSortValue(ans);
+  };
+
 
   useEffect(() => {
     axios({
-      url: "https://fakestoreapi.com/products/category/women's clothing",
+      url: `https://fakestoreapi.com/products/category/women's clothing?sort=${sortvalue}`,
       method: "GET",
     })
       .then((res) => {
@@ -18,12 +24,21 @@ const Womens = () => {
         // setLoading(false);
         console.log(err);
       });
-  }, []);
+  }, [sortvalue]);
 
 
 
   return (
     <div>
+      <br />
+      <br />
+      <div>
+        <select onChange={sortingFunc} style={{ backgroundColor: "#ff3366" }}>
+      
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
+      </div>
       <br />
       <br />
 
@@ -50,7 +65,7 @@ const Womens = () => {
               <div>
               <button
               disabled={count==5}
-              onClick={()=>setCount(count+1)}
+              onClick={()=>setCount(()=>count+1)}
                 style={{ backgroundColor: "#ff3366", borderRadius: "5px" }}
               >
                +
@@ -58,7 +73,7 @@ const Womens = () => {
               {count}
               <button
               disabled={count==0}
-              onClick={()=>setCount(count-1)}
+              onClick={()=>setCount(()=>count-1)}
                 style={{ backgroundColor: "#ff3366", borderRadius: "5px" }}
               >
              -

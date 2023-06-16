@@ -6,15 +6,18 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import AuthContextWrapper from './Context/AuthContext';
 import { ThemeProvider } from './Context/ThemeContext';
+import { CartContextProvider } from './Context/CartContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <ThemeProvider>
     <AuthContextWrapper>
+      <CartContextProvider>
     <BrowserRouter>
     <App />
     </BrowserRouter>
+    </CartContextProvider>
     </AuthContextWrapper>
     </ThemeProvider>
   </React.StrictMode>

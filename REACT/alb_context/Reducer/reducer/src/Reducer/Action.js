@@ -14,3 +14,7 @@ export const fetchUser = (dispatch, query) => {
       dispatch(gitHubFailureAction)
     });
 };
+
+      export const LOGIN_SUCCESS_action = {type:"LOGIN_SUCCESS"}
+      export const LOGIN_FAILURE_action = {type:"LOGIN_SUCCESS"}
+    

@@ -21,7 +21,7 @@ const userLogin=({username,password})=>{
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-   const [state,dispatch] = useContext(AuthContext)
+ const [state,dispatch] = useContext(AuthContext)
   const navigate= useNavigate()
 
   const handleUsernameChange = (event) => {
@@ -45,16 +45,17 @@ const LoginPage = () => {
       })
     
       alert("login Successfull")
-      navigate("/");
+      navigate("/mens");
     })
   
   }
   if(state.isAuth){
-    return <Navigate to="/Login" />
+    return <Navigate to="/LoginPage" />
   }
 
   return (
     <div className="login-page">
+      
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -75,7 +76,7 @@ const LoginPage = () => {
             onChange={handlePasswordChange}
           />
         </div>
-        <button type="submit">Login</button>
+        <button  type="submit">Login</button>
       </form>
     </div>
   );

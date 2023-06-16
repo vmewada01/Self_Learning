@@ -16,13 +16,13 @@ function App() {
     <div className="App">
       {/* <Form />
       <Layout /> */}
-      {/* <DashBoard /> */}
+      <DashBoard />
       {/* <Stacks/> */}
       {/* <BasicUsage /> */}
       {/* <GridLayout /> */}
       {/* <FlexLayout /> */}
       {/* <StacksLayout /> */}
-      <SimpleGridLayout />
+      {/* <SimpleGridLayout /> */}
     </div>
   );
 }

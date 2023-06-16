@@ -1,0 +1,51 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "HARSH",
+      "hospital": "AIIMS",
+      "specialisation": "SURGEN",
+      "salary": 40000
+    },
+    {
+      "id": 2,
+      "name": "UDAY",
+      "hospital": "BANSAL",
+      "specialisation": "RADIOSLOGIST",
+      "salary": 70000
+    },
+    {
+      "id": 3,
+      "name": "NARESH",
+      "hospital": "LVS",
+      "specialisation": "SURGEN",
+      "salary": 100000
+    },
+    {
+      "id": 4,
+      "name": "SAFAL",
+      "hospital": "AIIMS",
+      "specialisation": "CARDIO",
+      "salary": 45000
+    },
+    {
+      "id": 5,
+      "name": "Akhlesh",
+      "hospital": "BANSAL",
+      "specialisation": "DENTIST",
+      "salary": 30000
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    }
+  ]
+}

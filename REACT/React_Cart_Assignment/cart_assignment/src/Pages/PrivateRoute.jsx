@@ -6,7 +6,7 @@ function PrivateRoute({ children }) {
   const [state] = useContext(AuthContext);
 
   if (!state.isAuth) {
-    return <Navigate to="/" />;
+    return <Navigate to="/LoginPage" />;
   }
   return children;
 }

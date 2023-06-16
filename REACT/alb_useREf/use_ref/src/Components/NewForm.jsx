@@ -10,8 +10,8 @@ const NewForm = () => {
     status: "",
     file: "",
   };
-  const [data, setData] = useState(initial);
-  const [value , setValue] = useState([])
+  const [data, setData] = useState([initial]);
+     const [value, setValue] = useState([])
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -26,10 +26,11 @@ const NewForm = () => {
   const submitFunc = (e) => {
     e.preventDefault();
     
-    setValue(data)
-    setData(initial)
-    console.log(value);
-   // console.log(data)
+   setValue([ data])
+  //setData("")
+   // setData(data)
+   // console.log(value);
+   console.log(data)
   };
 
   return (
@@ -116,14 +117,26 @@ const NewForm = () => {
       
   
        
-              <tr>
-                <td> {data.name}</td>
+              {/* <tr> */}
+                {value?.map((abc)=>{
+                  return (
+                    <tr>
+                      <td>{abc.name}</td>
+                      <td>{abc.age}</td>
+                      <td>{abc.address}</td>
+                      <td>{abc.department}</td>
+                      <td>{abc.status}</td>
+                      <td>{abc.salary}</td>
+                      </tr>
+                  )
+                })}
+                {/* <td> {data.name}</td>
                 <td> {data.age}</td>
                 <td> {data.address}</td>
                 <td> {data.department}</td>
                 <td> {data.status}</td>
                 <td> {data.salary}</td>
-              </tr>
+              </tr> */}
       
       </table>
     </div>

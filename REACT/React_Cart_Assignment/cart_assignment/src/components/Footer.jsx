@@ -42,7 +42,7 @@ const Footer = () => {
         </ul>
       </div>
       <div>
-        <h4 style={{textAlign: "center"}}>
+        <h4 style={{textAlign: "center" , color:"#e6004c"}}>
           This ecommerce app is dedicated to providing the best online shopping experience. Browse our wide range of products, including electronics, fashion, home goods, and more. Shop with confidence and enjoy fast shipping and excellent customer service.
         </h4>
       </div>

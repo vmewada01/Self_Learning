@@ -18,6 +18,9 @@ const Navbar = () => {
     {
       to: "/user",
       title: "Users",
+    }, {
+      to: "/login",
+      title: "Login",
     }
   ];
 

@@ -4,56 +4,38 @@ import React, { useEffect, useState } from "react";
 const Products = () => {
   const [data, setData] = useState([]);
   const [count, setCount]= useState(0)
-  const [sortvalue, SetSortValue] = useState("");
+  const [sortvalue, SetSortValue] = useState("asc");
 
   const sortingFunc = (e) => {
     const ans = e.target.value;
     SetSortValue(ans);
   };
+  console.log(sortvalue)
 
   useEffect(() => {
     axios({
-      url: "https://fakestoreapi.com/products/category/jewelery",
+      url: `https://fakestoreapi.com/products/category/jewelery?sort=${sortvalue}`,
       method: "GET",
     })
       .then((res) => {
-        //console.log(res.data);
+       // console.log(res.data);
+       setData(res.data)
 
-        if (sortvalue == "asc") {
-          // ?sort=desc
-          const ascending = data.sort((a, b) => {
-            return a.price - b.price;
-          });
-          setData(ascending);
-          console.log(data);
-          //  console.log(sortvalue)
-        }
-        if (sortvalue == "dsc") {
-          // ?sort=desc
-          const descending = data.sort((a, b) => {
-            return b.price - a.price;
-          });
-          setData(descending);
-          //  console.log(data)
-          //  console.log(sortvalue)
-        } else {
-          setData(res.data);
-        }
       })
       .catch((err) => {
         // setLoading(false);
         console.log(err);
       });
-  }, []);
+  }, [sortvalue]);
 
   return (
     <div>
       <br />
       <div>
         <select onChange={sortingFunc} style={{ backgroundColor: "#ff3366" }}>
-          <option value="">Sorting</option>
+      
           <option value="asc">Ascending</option>
-          <option value="dsc">Descending</option>
+          <option value="desc">Descending</option>
         </select>
       </div>
       <br />
@@ -81,7 +63,7 @@ const Products = () => {
               <div>
               <button
               disabled={count==5}
-              onClick={()=>setCount(count+1)}
+              onClick={()=>setCount((prev)=>prev+1)}
                 style={{ backgroundColor: "#ff3366", borderRadius: "5px" }}
               >
                +
@@ -89,7 +71,7 @@ const Products = () => {
               {count}
               <button
               disabled={count==0}
-              onClick={()=>setCount(count-1)}
+              onClick={()=>setCount((prev)=>prev-1)}
                 style={{ backgroundColor: "#ff3366", borderRadius: "5px" }}
               >
              -
@@ -106,6 +88,7 @@ const Products = () => {
             </div>
           );
         })}
+       
       </div>
     </div>
   );

@@ -36,6 +36,7 @@ function AuthContextWrapper({children}){
 
  const [state, dispatch] = useReducer(authReducer, {isAuth: false, token: null})
 
+
     return (
   
         <AuthContext.Provider value={[state,dispatch]}>

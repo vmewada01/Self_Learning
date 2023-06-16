@@ -31,3 +31,28 @@ export const GitReducer= (state,action)=>{
 
 
 }
+
+export const AuthReducer=(state,action)=>{
+   switch(action.type){
+       case "LOGIN_SUCCESS":{
+        return {
+         ...state,
+         isAuth: true,
+         token: action.payload
+        }
+
+       }
+       case "LOGOUT_SUCCESS":{
+         return {
+          ...state,
+          isAuth: false,
+          token: null
+         }
+ 
+        }
+        default:
+         return state
+        
+
+   }
+}

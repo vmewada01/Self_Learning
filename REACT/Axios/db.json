@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Vishal",
+      "status": false
+    },
+    {
+      "id": 2,
+      "title": "safal",
+      "status": true
+    },
+    {
+      "status": false,
+      "id": 3
+    },
+    {
+      "status": false,
+      "id": 4
+    }
+  ]
+}

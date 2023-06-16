@@ -7,8 +7,10 @@ import AllRoutes from './AllRoutes/AllRoutes';
 
 
 function App() {
+  console.log(process.env.REACT_APP_URL)
   return (
     <div className="App">
+    <h4>ENV: {process.env.REACT_APP_URL}</h4>
      {/* <Counter /> */}
      {/* <GitHub/> */}
      <Navbar/>
