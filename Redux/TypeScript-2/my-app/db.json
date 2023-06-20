@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "id": 3,
+      "status": true,
+      "title": "learn redux"
+    },
+    {
+      "id": 4,
+      "status": false,
+      "title": "learn driving "
+    },
+    {
+      "id": 5,
+      "status": true,
+      "title": "learn typeScript"
+    },
+    {
+      "id": 6,
+      "status": true,
+      "title": "learn skills"
+    }
+  ]
+}
