@@ -1,0 +1,9 @@
+{
+  "todos": [],
+  "products": [],
+  "list_items": [
+    { "id": 1, "produc": "hii" },
+    { "id": 2, "produc": "by" },
+    { "id": 2, "produc": "by" }
+  ]
+}

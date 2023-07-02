@@ -1,0 +1,7 @@
+{
+  "products": [
+    "{\"id\":1,\"items\":\"food\",\"status\":true}",
+    "{\"id\":2,\"items\":\"cloths\",\"status\":false}",
+    "{\"id\":3,\"items\":\"shoes\",\"status\":true}"
+  ]
+}
