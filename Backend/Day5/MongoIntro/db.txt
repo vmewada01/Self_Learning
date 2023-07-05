@@ -1,0 +1,7 @@
+db.user_data.find({gender:"Male"})
+db.user_data.find({gender:"Female"},{nation:"United States})
+db.user_data.find().sort({age: 1})
+db.user_data.find({age: {$gt 25}})
+db.user_data.find(age: {$lt 25}})
+db.user_data.find({age:22},{nation: "Nepal"}).sort({age: 1})
+db.user_data.find({nation:"United States"}).sort({age: -1})

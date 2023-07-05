@@ -1,0 +1,6 @@
+ db.mongoqueries.find({$expr: {$gt: [{$size:"$timezones"},1]}})
+db.mongoqueries.find({"translation.kr" : {$exists:true }})
+db.mongoqueries.find({"timezones.gmtOffset": 3600},{"timezones.tzName":"Central European Time"})
+db.mongoqueries.find({"timezones.gmtOffset": 3600})
+ db.mongoqueries.find({currency: "EUR"})
+ db.mongoqueries.find({region: "Asia"})
