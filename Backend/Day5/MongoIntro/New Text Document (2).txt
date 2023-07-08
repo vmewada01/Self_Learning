@@ -4,3 +4,8 @@ db.mongoqueries.find({"timezones.gmtOffset": 3600},{"timezones.tzName":"Central 
 db.mongoqueries.find({"timezones.gmtOffset": 3600})
  db.mongoqueries.find({currency: "EUR"})
  db.mongoqueries.find({region: "Asia"})
+
+db.eval2.updateMany({$and:[{gender:"Male"},{age:{$mod:[2,1]}}]},{$inc: {"age": -1}})
+ db.eval2.updateMany( { $or: [ {id: {$mod: [2,0]} }, {"age" : {$mod: [2,0]}} ,{"family_members":{$mod: [2,0]} } ] } ,[{$set: {"even_user":true}}])
+
+db.eval2.find({native:"United States",age:{$lte: 23}}).sort({family_family_members:1})
