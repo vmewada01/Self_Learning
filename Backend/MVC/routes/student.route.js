@@ -15,7 +15,7 @@ studentRouter.post("/addStudents", studentController.postStudent);
 
 studentRouter.delete("/:studentname",studentController.deleteStudent)
 
-studentRouter.patch("/:studentname",studentController.patchStudent)
+studentRouter.patch("/:_id",studentController.patchStudent)
 
-studentRouter.put("/:studentname",studentController.putStudent)
+studentRouter.put("/:_id",studentController.putStudent)
 module.exports = { studentRouter };

@@ -1,101 +1,123 @@
 const express = require("express");
-
-const fs = require("fs")
+const fs = require("fs");
 
 const app = express();
 app.use(express.json());
 
-const logger = (req,res,next)=> {
-    const {method,url, headers}= req
-    const log = `${method},${url} ,${userAgent}\n`
-    fs.appendFile('./logs.txt',log,(err)=>{
-        if(err){
-            console.log("error in writing log file")
+const validator = (req, res, next) => {
+  if (req.method === "POST") {
+    if (req.url === "/posts/create") {
+      const { id, title, content, author } = req.body;
+      if (id && title && content && author) {
+        if (
+          typeof id === "number" &&
+          typeof title === "string" &&
+          typeof content === "string" &&
+          typeof author === "string"
+        ) {
+          next();
+        } else {
+          res.send("Validation Failed");
         }
-    })
-    next()
-}
-
-const guard = (req,res,next)=> {
-    const pass= req.query.password;
-    if(pass=='54213'){
-        next();
-    }else{
-        res.status(401).send("You are not authorized")
+      } else {
+        res.send("validation failed");
+      }
+    } else {
+      res.send("Validation failed");
     }
-}
+  } else {
+    next();
+  }
+};
 
-const validator = (req,res,next)=> {
-    if(req.method==="POST"){
-        const {id, title,content,author}= req.body 
-        if((typeof id ==Number) &&(typeof title ==String) &&(typeof content ==String) &&(typeof author ==String)  ) {
-            next()
-        } else{
-            res.send("Validation Failed")
-        }
-    } 
-}
+app.use(validator);
+const logger = (req, res, next) => {
+    const text = `${req.method}, ${req.url}, ${req.headers["user-agent"]}\n`;
+    const write = fs.appendFileSync("./logs.txt", text, "utf-8");
+    next();
+  };
+  
+  app.use(logger);
 
-// app.use("/product", menproduct);
-
-
-app.post("/posts", (req, res) => {
-    const {id, title,content,author}= req.body 
-    console.log(req.body)
-    const newPost = {id,title,content,author}
- fs.readFileSync("./posts.json",(err,posts)=> {
-    if(err){
-        console.log("error")
-        res.status(500).send('internal server error')
+ const guard = (req,res,next)=> {
+    const {password} = req.query
+    console.log(password)
+    if(password==="54213"){
+     next()
     }else{
-        let post = JSON.parse(posts)
-        post.push(newPost)
-        fs.writeFileSync("./posts.json",JSON.stringify(posts,null,2)),(err=> {
-          if(err)  {
-            console.log(err)
-          }else{
-            res.status(201).json(newPost)
-          }
-        })
+        res.send("You are not authorized")
     }
- })
-     
-    // console.log(JSON.stringify(data.posts))
-    console.log("req made successfully")
-    // fs.appendFileSync("./posts.json", JSON.stringify(req.body))
-    res.send("request made successfully");
-});
+   
+ }
+
+ app.use(guard)
 
 app.get("/posts", (req, res) => {
- fs.readFileSync("./posts.json",(err,posts)=> {
-    if(err){
-        console.log(err)
-    }else{
-      const  post = JSON.parse(posts)
-        res.json(post)
+  if (req.method === "GET") {
+    let data = fs.readFileSync("./posts.json", { encoding: "utf-8" });
+    data = JSON.parse(data).posts;
+    console.log("get req made successfully");
+    res.send(data);
+  }
+});
 
+app.post("/posts/create", (req, res) => {
+  if (req.method === "POST") {
+    let data = fs.readFileSync("./posts.json", { encoding: "utf-8" });
+    parsed_data = JSON.parse(data);
+    data = parsed_data.posts;
+    const payload = req.body;
+    // console.log(payload)
+    // console.log(data)
+    data.push(payload);
+    const latest_posts = JSON.stringify(parsed_data);
+    //   console.log(latest_posts)
+    //   console.log(data)
+    fs.writeFileSync("./posts.json", latest_posts, "utf-8");
+    res.send("post request made successfully");
+  }
+});
+
+
+app.patch("/posts/:postId", (req, res) => {
+  const payload = req.body;
+  const id = req.params.postId;
+  console.log(id);
+  let data = fs.readFileSync("./posts.json", { encoding: "utf-8" });
+  parsed_data = JSON.parse(data);
+  data = parsed_data.posts;
+  const update = data.map((item) => {
+    if (item.id === Number(id)) {
+      return payload;
+    } else {
+      return item;
     }
- })
-    const post= JSON.parse(posts)
-   res.json(post);
- 
- });
+  });
+
+  parsed_data.posts = update;
+
+  const latest_posts = JSON.stringify(parsed_data);
+  fs.writeFileSync("./posts.json", latest_posts, "utf-8");
+
+  res.send("patch request made successfully");
+});
+
+app.delete("/posts/:postId", (req, res) => {
+  let id = req.params.postId;
+  let data = fs.readFileSync("./posts.json", { encoding: "utf-8" });
+  let parsed_data = JSON.parse(data);
+  data = parsed_data.posts;
+
+  let filter_post = data.filter((item) => item.id !== Number(id));
+  parsed_data.posts = filter_post;
+  let latest_posts = JSON.stringify(parsed_data);
+  fs.writeFileSync("./posts.json", latest_posts, "utf-8");
+
+  res.send("delete request made successfully");
+});
 
 
-app.delete("/posts/:id", (req,res)=>{
-    const {id} = req.params 
-    const data = fs.readFileSync("./posts.json", "application/json" )
-
-    const filterItem = data.filter((item)=> +(item.id)==Number(id) )
-    if(filterItem){
-      res.json(user)
-    }else{
-        res.status(404).json({error: "user not found"})
-
-    }
-
-})
 
 app.listen(8080, () => {
-  console.log("server is running at port 8080");
+  console.log("Listening at port 8080 ");
 });

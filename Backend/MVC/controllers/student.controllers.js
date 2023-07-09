@@ -33,26 +33,39 @@ const deleteStudent = async (req, res) => {
 };
 
 const patchStudent = async (req, res) => {
-  const name = req.params.studentname;
+  const {name, age,course}= req.body
+  const id = req.params._id;
+ const payload={
+  name: name,
+  age: age,
+  course: course
+ }
+    Student.findByIdAndUpdate(id,{name,age,course},{new: true}).then(async()=> {
+      await Student.updateOne(payload)
+  })
 
-  if (name === "Deepak") {
   
-    const payload = req.body;
-    console.log(payload)
-    await Student.updateOne(payload);
-  }
   res.send("Data patched successfully");
 };
 
 const putStudent = async (req, res) => {
-    const name = req.params.studentname;
- // console.log(name)
-    if (name === "Hero") {
+  const {name, age,course}= req.body
+    const id = req.params._id;
+    const payload={
+      name: name,
+      age: age,
+      course: course
+     }
+    Student.findById(id,{name,age,course},{new: true}).then(async()=> {
+      await Student.updateOne(payload)
+    })
+//  // console.log(name)
+//     if (name === "Hero") {
     
-      const payload = req.body;
-      console.log(payload)
-      await Student.updateMany(payload);
-    }
+//       const payload = req.body;
+//       console.log(payload)
+//       await Student.updateMany(payload);
+//     }
     res.send("Data put  successfully");
   };
 
