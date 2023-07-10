@@ -7,7 +7,7 @@
     "mongoose": "^7.3.2",
     "nodemon": "^3.0.1"
   },
-  "name": "authenctication",
+  "name": "crud---authentication",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {

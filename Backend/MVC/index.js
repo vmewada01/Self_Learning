@@ -4,6 +4,8 @@ const {Student}= require("./Model/Student.model")
 const {Ia} = require("./Model/Ia.model");
 const { studentRouter } = require("./routes/student.route");
 const { iaRouter } = require("./routes/ias.route");
+const dotenv= require("dotenv").config()
+
 
 const app = express();
 app.use(express.json())
@@ -17,8 +19,9 @@ app.use("/students", studentRouter)
 app.use("/ias",iaRouter)
 
 
+const PORT= process.env.PORT || 8004
 
-app.listen(8008, async()=> {
+app.listen(PORT, async()=> {
     try{
         await connection 
         console.log("Connected to the Db successfully")
@@ -30,5 +33,5 @@ app.listen(8008, async()=> {
         console.log(err)
 
     }
-    console.log("server is running at port 8008")
+    console.log("server is running at port "+ PORT)
 })
