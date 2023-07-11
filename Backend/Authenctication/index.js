@@ -7,10 +7,26 @@ const dotenv = require("dotenv").config();
 //console.log(dotenv.parsed)
 app.use(express.json());
 var jwt = require("jsonwebtoken");
+const { passport } = require("./config/google-auth.js");
 
 app.get("/", (req, res) => {
   res.send("Home page");
 });
+app.get(
+  "/auth/google",
+  passport.authenticate("google", { scope: ["email", "profile"] })
+);
+
+
+app.get(
+  "/auth/google/callback",
+
+  passport.authenticate("google", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+    session: false,
+  })
+);
 
 app.post("/signup", async (req, res) => {
   const { email, password } = req.body;
@@ -33,12 +49,11 @@ app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   const data = await UserModel.findOne({ email });
   const hashed_password = data.password;
-  
+
   bcrypt.compare(password, hashed_password, function (err, result) {
     // result == true
-  
+
     if (result) {
-    
       const token = jwt.sign({ email: email }, "abc1234");
       res.send({
         msg: "Login Successfull",

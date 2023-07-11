@@ -5,7 +5,10 @@
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.3.2",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "passport": "^0.6.0",
+    "passport-google-oauth2": "^0.2.0",
+    "uuid": "^9.0.0"
   },
   "name": "authenctication",
   "version": "1.0.0",

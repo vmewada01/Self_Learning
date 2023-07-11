@@ -43,17 +43,34 @@ app.get("/todos", async (req, res) => {
   const token = req.headers.authorization;
   //console.log(token)
   try {
-    var decoded = jwt.verify(token, 'vishal123');
+    var decoded = jwt.verify(token, "vishal123");
     const data = await todo_Model.find();
     res.send(data);
-
-} catch(err) {
+  } catch (err) {
     // err
-    console.log(err)
-    res.send("please login")
+    console.log(err);
+    res.send("please login");
   }
-  
 });
+
+app.get("/todos/:_id", async (req, res) => {
+    const { _id } = req.params;
+      const token = req.headers.authorization;
+    //console.log(token)
+    try {
+      var decoded = jwt.verify(token, "vishal123");
+      const data = await todo_Model.findOne({_id});
+      res.send(data);
+    } catch (err) {
+      // err
+      console.log(err);
+      res.send("please login");
+    }
+  });
+
+
+
+
 
 app.patch("/todos/:_id", async (req, res) => {
   const { _id } = req.params;
@@ -74,17 +91,18 @@ app.delete("/todos/:_id", async (req, res) => {
   res.send(data);
 });
 
-const validation= (req,res,next)=> {
-    const {title, note, tags}= req.body;
-    if(title && note &&  tags){
-      next()
-    }
-    else{
-      res.send("please enter all the mandatory fields")
-    }
+const validation = (req, res, next) => {
+  const { title, note, tags } = req.body;
+  if (title && note && tags) {
+    next();
+  } else {
+    res.send("please enter all the mandatory fields");
   }
+};
 
-   app.use(validation)
+app.use(validation);
+
+
 
 app.post("/todos/create", async (req, res) => {
   const { title, note, tags } = req.body;
@@ -95,7 +113,7 @@ app.post("/todos/create", async (req, res) => {
   };
 
   const data = await todo_Model.insertMany(payload);
-  
+
   res.send(data);
 });
 
