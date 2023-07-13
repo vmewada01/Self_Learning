@@ -1,0 +1,4 @@
+PORT=8000
+MONGO_URL=mongodb+srv://vishalmewada9826:vishal123@cluster0.e9utouv.mongodb.net/backend_psc?retryWrites=true&w=majority
+
+
