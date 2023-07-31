@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>crud application</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="todo-input-box">
+        <input
+          id="input-text"
+          type="text"
+          placeholder="add something to the todo list"
+        />
+        <button id="add-text" onclick="addFunction()">Add</button>
+      </div>
+
+      <div id="content"></div>
+    </div>
+  </body>
+  <script>
+    let array = JSON.parse(localStorage.getItem("crud-data")) || [];
+    MapItems(array)
+    function addFunction() {
+      let addedText = document.querySelector("#input-text");
+      addTextValue = addedText.value;
+      array.push(addTextValue);
+
+      localStorage.setItem("crud-data", JSON.stringify(array));
+      window.location.reload();
+    }
+function MapItems(array){
+    if (array.length > 0) {
+      array.map((item) => {
+        const mainContainer = document.createElement("div");
+        mainContainer.style.display = "flex";
+
+        mainContainer.style.justifyContent = "space-evenly";
+
+        const title = document.createElement("div");
+        title.innerText = item;
+
+        const update = document.createElement("button");
+        update.innerText = "update";
+        update.addEventListener("click", updateFunction);
+
+        const Remove = document.createElement("button");
+        Remove.innerText = "remove";
+        Remove.addEventListener("click", RemoveFunction(item));
+
+        mainContainer.append(title, update, Remove);
+        document.querySelector("#content").append(mainContainer);
+      });
+}
+
+
+      function RemoveFunction(item) {
+        const new_Data = array.filter((abc) => abc !== item);
+        // console.log(new_Data);
+      let new_data =  localStorage.setItem("crud-data", JSON.stringify(new_Data));
+        // window.location.reload();
+        MapItems(new_data)
+      }
+
+      function updateFunction() {}
+    }
+  </script>
+</html>

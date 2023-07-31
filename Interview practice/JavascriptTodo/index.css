@@ -1,0 +1,6 @@
+#todo-input-box{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    font-size: 40px;
+}
