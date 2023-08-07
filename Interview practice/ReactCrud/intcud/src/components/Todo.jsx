@@ -17,11 +17,11 @@ import React, { useEffect, useState } from "react";
 
 export default function Todo() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [editItem, setEditItem] = useState(false)
+  const [editItem, setEditItem] = useState(false);
   const initialRef = React.useRef(null);
   const finalRef = React.useRef(null);
-  const [items, setItems] = useState(null)
-
+  
+  const [save_edit, setSave_edit] = useState("")
   const [input_Data, setInput_Data] = useState({
     firstname: "",
     lastname: "",
@@ -29,13 +29,21 @@ export default function Todo() {
     contact: "",
   });
   const [data, setData] = useState([]);
+  const [items, setItems] = useState(() => {
+    const savedTodos = localStorage.getItem("react-crud");
+    if (savedTodos) {
+      return JSON.parse(savedTodos);
+    } else {
+      return [];
+    }
+  });
 
   const handleSaveFunction = () => {
-     setEditItem(false)
+    setEditItem(false);
     setData([...data, input_Data]);
-    console.log(data)
-    
-    onClose()
+   // console.log(data);
+
+    onClose();
   };
 
   const handleChange = (event) => {
@@ -43,35 +51,44 @@ export default function Todo() {
     const name = target.name;
 
     setInput_Data({
-        ...input_Data,
+      ...input_Data,
       [name]: target.value,
     });
-  
+
     // console.log(input_Data)
   };
 
+  //console.log(editItem);
+  const handleEdit = (item) => {
+    setEditItem(true);
 
-console.log(editItem)
-  const handleEdit=(item)=>{
-    setEditItem(true)
-
-    onOpen()
+    onOpen();
+    setSave_edit(item)
    
-
-  }
-  const handleDelete =(item)=>{
-     const newData = items.filter((abc)=> abc.firstname !== item)
-     setData(newData)
+  };
+  const handleDelete = (item) => {
+    const newData = items.filter((abc) => abc.firstname !== item);
+    setData(newData);
     // setData(newData)
-    
-  }
+  };
+  const handleEditSave = () => {
+    const new_One = items.map((prod) => {
+      return prod.firstname === save_edit ? input_Data : prod;
+    });
+    setData(new_One);
+    setEditItem(false);
+   console.log(data)
+     onClose();
+    //console.log(data);
+  };
 
 
-  useEffect(()=>{
-    localStorage.setItem("react-crud",JSON.stringify(data))
-   let  localStoragedata  = JSON.parse(localStorage.getItem("react-crud"))
-     setItems(localStoragedata)
-  },[data])
+
+  useEffect(() => {
+    localStorage.setItem("react-crud", JSON.stringify(data));
+    let localStoragedata = JSON.parse(localStorage.getItem("react-crud"));
+    setItems(localStoragedata);
+  }, [data]);
 
   return (
     <>
@@ -126,28 +143,42 @@ console.log(editItem)
           </ModalBody>
 
           <ModalFooter>
-            {editItem ? (<Button colorScheme="blue" mr={3}>Edit</Button>):( <Button onClick={handleSaveFunction} colorScheme="blue" mr={3}>
-              Save
-            </Button>) }
-           
+            {editItem ? (
+              <Button onClick={handleEditSave} colorScheme="blue" mr={3}>
+                Edit
+              </Button>
+            ) : (
+              <Button onClick={handleSaveFunction} colorScheme="blue" mr={3}>
+                Save
+              </Button>
+            )}
+
             <Button onClick={onClose}>Cancel</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
 
-
-      {items && items.map((item,index)=> {
-        return <Box key={index} style={{display:"flex" ,margin:"1rem" ,justifyContent:"space-between"}}>
-                 <Box>{item.firstname}</Box>
-                 <Box>{item.jobDescription}</Box>
-                 <Box>{item.contact}</Box>
-                 <Button onClick={()=>handleEdit(item.firstname)}>Edit</Button>
-                 <Button onClick={()=>handleDelete(item.firstname)}>Delete</Button>
-        </Box>
-      })}
-
-
-
+      {items &&
+        items.map((item, index) => {
+          return (
+            <Box
+              key={index}
+              style={{
+                display: "flex",
+                margin: "1rem",
+                justifyContent: "space-between",
+              }}
+            >
+              <Box>{item.firstname}</Box>
+              <Box>{item.jobDescription}</Box>
+              <Box>{item.contact}</Box>
+              <Button onClick={() => handleEdit(item.firstname)}>Edit</Button>
+              <Button onClick={() => handleDelete(item.firstname)}>
+                Delete
+              </Button>
+            </Box>
+          );
+        })}
     </>
   );
 }
