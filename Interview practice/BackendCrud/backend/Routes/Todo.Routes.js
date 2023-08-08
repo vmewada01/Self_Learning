@@ -40,7 +40,7 @@ todoRouter.delete("/:id",  async (req, res) => {
     //console.log(user);
     try {
       if (user) {
-        await userModel.deleteOne({ _id: id });
+        await todoModel.deleteOne({ _id: id });
   
         res.send({ message: "deleted succefully" });
       } else {

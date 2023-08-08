@@ -6,6 +6,16 @@
     <title>crud application</title>
     <link rel="stylesheet" href="./index.css" />
   </head>
+  <style>
+    #content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+    #UpdateForm {
+      display: none;
+    }
+  </style>
   <body>
     <div id="container">
       <div id="todo-input-box">
@@ -16,55 +26,60 @@
         />
         <button id="add-text" onclick="addFunction()">Add</button>
       </div>
+      <form action="javascript:void(0);" id="UpdateForm">
+        <input type="text" id="update-task" />
+        <input type="submit" value="Update" />
+        <a onclick="CloseInput()" id="close">&#10006;</a>
+      </form>
 
       <div id="content"></div>
     </div>
   </body>
   <script>
     let array = JSON.parse(localStorage.getItem("crud-data")) || [];
-    MapItems(array)
+
     function addFunction() {
       let addedText = document.querySelector("#input-text");
       addTextValue = addedText.value;
       array.push(addTextValue);
 
       localStorage.setItem("crud-data", JSON.stringify(array));
-      window.location.reload();
+       window.location.reload()
     }
-function MapItems(array){
-    if (array.length > 0) {
-      array.map((item) => {
-        const mainContainer = document.createElement("div");
-        mainContainer.style.display = "flex";
 
-        mainContainer.style.justifyContent = "space-evenly";
-
-        const title = document.createElement("div");
-        title.innerText = item;
-
-        const update = document.createElement("button");
-        update.innerText = "update";
-        update.addEventListener("click", updateFunction);
-
-        const Remove = document.createElement("button");
-        Remove.innerText = "remove";
-        Remove.addEventListener("click", RemoveFunction(item));
-
-        mainContainer.append(title, update, Remove);
-        document.querySelector("#content").append(mainContainer);
-      });
-}
-
-
-      function RemoveFunction(item) {
-        const new_Data = array.filter((abc) => abc !== item);
-        // console.log(new_Data);
-      let new_data =  localStorage.setItem("crud-data", JSON.stringify(new_Data));
-        // window.location.reload();
-        MapItems(new_data)
+    function ReadAllTask() {
+      var data = "";
+      for (var i = 0; i < array.length; i++) {
+        data += "<div>";
+        data += "<td>" + array[i] + "</td>";
+        data +=
+          "<td><button onclick=UpdateTask(" + i + ")>Update</button></td>";
+        data +=
+          "<td><button onclick=DeleteTask(" + i + ")>Delete</button></td>";
+        data += "</div>";
       }
+      document.getElementById("content").innerHTML = data;
+    }
+    ReadAllTask();
 
-      function updateFunction() {}
+    function UpdateTask(item) {
+      document.getElementById("UpdateForm").style.display = "block";
+      document.getElementById("update-task").value = array[item];
+      document.getElementById("UpdateForm").onsubmit = function () {
+        var task = document.getElementById("update-task").value;
+        array.splice(item, 1, task.trim());
+        localStorage.setItem("crud-data", JSON.stringify(array));
+        ReadAllTask();
+        CloseInput();
+      };
+    }
+    function DeleteTask(item) {
+      array.splice(item, 1);
+      localStorage.setItem("crud-data", JSON.stringify(array));
+      ReadAllTask();
+    }
+    function CloseInput() {
+      document.getElementById("UpdateForm").style.display = "none";
     }
   </script>
 </html>

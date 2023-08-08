@@ -12,7 +12,9 @@
     </select>
     <input type="text" name="email" id="email" />
     <input type="text" name="mobile" id="mobile" />
+    <input type="text" placeholder="type talent" name="talent" id="talent"  />
     <hr />
+    <button onclick="showtalent()">show talent</button>
     <button onclick="showName()">NAME</button>
     <button onclick="showGender()">GENDER</button>
     <button onclick="showEmail()">EMAIL</button>
@@ -37,6 +39,13 @@
         // Show the alert of the filled mobile
         alert(document.getElementById("mobile").value);
       }
+
+     function showtalent(){
+      let data = document.querySelector("#talent").value
+      document.querySelector("#talent")
+     }
+
+
     </script>
   </body>
 </html>

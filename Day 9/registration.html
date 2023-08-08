@@ -27,8 +27,10 @@
     <script type="text/javascript">
       function showName() {
         // Show filled name inside h1
-        let input = document.getElementById("name").value;
-        document.getElementById("dName").innerText = input;
+        let input = document.querySelector("#name").value
+       // let input = document.getElementById("name").value;
+       console.log(input)
+       document.getElementById("dName").innerText = input;
       }
 
       function showGender() {

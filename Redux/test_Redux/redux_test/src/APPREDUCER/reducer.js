@@ -3,7 +3,8 @@ const intialState={
     data:[],
     isAuth: false,
     isloading: false,
-    isError: false
+    isError: false,
+    formsData: [],
 }
 
 const reducer=(state=intialState, action)=> {

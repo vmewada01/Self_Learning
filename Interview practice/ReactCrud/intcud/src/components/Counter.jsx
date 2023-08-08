@@ -24,6 +24,10 @@ const reducer = (state, action) => {
   }
 };
 
+  
+
+
+
 const Counter = () => {
 const[state, dispatch]= useReducer(reducer,{count:0})
 
